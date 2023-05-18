@@ -1,5 +1,3 @@
-// Word cloud layout by Jason Davies, http://www.jasondavies.com/word-cloud/
-// Algorithm due to Jonathan Feinberg, http://static.mrfeinberg.com/bv_ch03.pdf
 (function() {
     function cloud() {
       var size = [256, 256],
@@ -53,7 +51,6 @@
               event.word(d);
               if (bounds) cloudBounds(bounds, d);
               else bounds = [{x: d.x + d.x0, y: d.y + d.y0}, {x: d.x + d.x1, y: d.y + d.y1}];
-              // Temporary hack
               d.x -= size[0] >> 1;
               d.y -= size[1] >> 1;
             }
@@ -102,7 +99,6 @@
   
           if (tag.x + tag.x0 < 0 || tag.y + tag.y0 < 0 ||
               tag.x + tag.x1 > size[0] || tag.y + tag.y1 > size[1]) continue;
-          // TODO only check for collisions within current bounds.
           if (!bounds || !cloudCollide(tag, board, size[0])) {
             if (!bounds || collideRects(tag, bounds)) {
               var sprite = tag.sprite,
@@ -215,9 +211,7 @@
     function cloudPadding() {
       return 1;
     }
-  
-    // Fetches a monochrome sprite bitmap for the specified text.
-    // Load in batches for speed.
+
     function cloudSprite(d, data, di) {
       if (d.sprite) return;
       c.clearRect(0, 0, (cw << 5) / ratio, ch / ratio);
@@ -275,7 +269,7 @@
         var w = d.width,
             w32 = w >> 5,
             h = d.y1 - d.y0;
-        // Zero the buffer
+
         for (var i = 0; i < h * w32; i++) sprite[i] = 0;
         x = d.xoff;
         if (x == null) return;
@@ -302,7 +296,6 @@
       }
     }
   
-    // Use mask-based collision detection.
     function cloudCollide(tag, board, sw) {
       sw >>= 5;
       var sprite = tag.sprite,
@@ -351,7 +344,7 @@
           y = 0;
       return function(t) {
         var sign = t < 0 ? -1 : 1;
-        // See triangular numbers: T_n = n * (n + 1) / 2.
+
         switch ((Math.sqrt(1 + 4 * sign * t) - sign) & 3) {
           case 0:  x += dx; break;
           case 1:  y += dy; break;
@@ -362,7 +355,6 @@
       };
     }
   
-    // TODO reuse arrays?
     function zeroArray(n) {
       var a = [],
           i = -1;
@@ -384,7 +376,7 @@
       canvas.width = (cw << 5) / ratio;
       canvas.height = ch / ratio;
     } else {
-      // Attempt to use node-canvas.
+
       canvas = new Canvas(cw << 5, ch);
     }
   

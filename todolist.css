@@ -24,9 +24,7 @@ html {
     height: 500px;
     margin: auto;
     border: 2px solid black;
-    /* box-sizing: border-box;  */
   }
-/* Remove margins and padding from the list */
 ul {
     margin: auto;
     height: 200px;
@@ -35,7 +33,6 @@ ul {
     margin-top: 100px;
 }
 
-/* Style the list items */
 ul li {
     cursor: pointer;
     position: relative;
@@ -43,35 +40,27 @@ ul li {
     list-style-type: none;
     background: rgb(194, 185, 201);
     font-size: 15px;
-    /* transition: 0.2s; */
-    /* make the list items unselectable */
     -webkit-user-select: none; 
     -moz-user-select: none; 
     -ms-user-select: none;
     user-select: none;
 }
-
-/* Set all odd list items to a different color (zebra-stripes) */
 ul li:nth-child(odd) {
     background: rgb(210, 211, 229);
 }
 
-/* Darker background-color on hover */
 ul li:hover {
     background: rgb(86, 77, 157);
 }
 
-/* When clicked on, add a background color and strike out text */
 ul li.checked {
     background: rgb(67, 64, 75);
     color: #fff;
     text-decoration: line-through;
 }
 
-/* Add a "checked" mark when clicked on */
 ul li.checked::before {
-        content: "";
-        /* position: absolute; */
+        content: "";  
         border-color: rgb(255, 255, 255);
         border-style: solid;
         border-width: 0 2px 2px 0;
@@ -109,14 +98,13 @@ ul li.checked::before {
 #myDIV{
   color:rgb(255, 255, 255);
 }
-/* Clear floats after the header */
+
 .header:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* Style the input */
 #myInput {
   border-color: 0.5px rgb(102, 103, 171);
   border-radius: 0; 
@@ -126,17 +114,14 @@ ul li.checked::before {
   font-size: 15px;
 }
 
-/* Style the "Add" button */
 .addBtn {
   padding: 10px;
   width: 60px;
   background: rgb(49, 49, 49);
   color: white;
   float: left;
-  /* text-align: center; */
   font-size: 15px;
   cursor: pointer;
-  /* transition: 0.3s; */
   border-radius: 0;
 }
 
@@ -218,5 +203,3 @@ img.list {
     margin: 60px;
     font-size: 15px;
   }
-  
-  

@@ -9,7 +9,6 @@ body { background : rgb(255, 255, 255);}
     margin: auto;
     width: 1000px;
     height: 350px;
-    /* padding-top : 40px; */
     padding-bottom: 200px;
     padding-left: 100px;
     padding-right: 100px;
@@ -21,7 +20,6 @@ body { background : rgb(255, 255, 255);}
     width: 550px;
     height: 290px;
     padding-bottom: 20px;
-    /* background-color: rgb(58, 52, 52); */
 }
 
 .link {
@@ -94,6 +92,3 @@ img.arrow {
     margin: 60px;
     font-size: 15px;
 }
-
-
-

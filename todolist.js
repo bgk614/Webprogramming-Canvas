@@ -1,4 +1,4 @@
-    // Create a "close" button and append it to each list item
+    // 닫기 버튼
     var myNodelist = document.getElementsByTagName("LI");
     var i;
     for (i = 0; i < myNodelist.length; i++) {
@@ -9,7 +9,7 @@
         myNodelist[i].appendChild(span);
     }
 
-    // Click on a close button to hide the current list item
+    // 닫기 버튼
     var close = document.getElementsByClassName("close");
     var i;
     for (i = 0; i < close.length; i++) {
@@ -19,7 +19,7 @@
         };
     }
 
-    // Add a "checked" symbol when clicking on a list item
+    // 선택
     var list = document.querySelector("ul");
     list.addEventListener(
         "click",
@@ -31,7 +31,7 @@
         false
     );
 
-    // Create a new list item when clicking on the "Add" button
+    // 추가 버튼
     function newElement() {
         var li = document.createElement("li");
         var inputValue = document.getElementById("myInput").value;
