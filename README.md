@@ -1,2 +1,1 @@
-2022년 2학기 웹프로그래밍 팀프로젝트 과제   
-2022 Pantone Color - Very Peri 
+2022.11.7 ~ 2022.11.28 Webprogramming team project (HTML5, CSSS3, Javascipt)
